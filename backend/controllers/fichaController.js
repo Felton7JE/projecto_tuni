@@ -30,7 +30,7 @@ export async function upload(req, res) {
     const arquivoBuffer = fs.readFileSync(req.file.path);
     
     db.query(
-      'INSERT INTO ficha (titulo, tema, disciplina, conteudo, arquivo_pdf, nome_arquivo, tipo_arquivo, tamanho_arquivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
+      'INSERT INTO ficha (titulo, tema, disciplina_id, conteudo, arquivo, nome_arquivo, tipo_arquivo, tamanho_arquivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
       [
         titulo,
         tema,

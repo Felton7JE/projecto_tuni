@@ -207,7 +207,7 @@ const FichasDisciplina: React.FC = () => {
       const formDataToSend = new FormData();
       formDataToSend.append('titulo', formData.titulo);
       formDataToSend.append('tema', formData.tema);
-      formDataToSend.append('disciplina', disciplina?.nome || 'Disciplina');
+      formDataToSend.append('disciplina', disciplinaId || 'Disciplina');
       formDataToSend.append('arquivo', formData.arquivo);
 
       const response = await fetch('http://localhost:3000/fichas/upload', {
@@ -218,6 +218,8 @@ const FichasDisciplina: React.FC = () => {
         body: formDataToSend
       });
 
+      console.log("\nStatus Code: ", response.status, "\nBody: ", response.body, "\n");
+
       if (response.ok) {
         setShowModal(false);
         setFormData({ titulo: '', tema: '', arquivo: null });
@@ -225,6 +227,7 @@ const FichasDisciplina: React.FC = () => {
         alert('Ficha criada com sucesso!');
       } else {
         const errorData = await response.json();
+        console.log(errorData);
         alert(`Erro ao criar ficha: ${errorData.error || 'Erro desconhecido'}`);
       }
     } catch (error) {

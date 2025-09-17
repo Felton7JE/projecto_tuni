@@ -18,6 +18,7 @@ export async function enviarFicha(fichaData: {
 
   if (!response.ok) {
     const error = await response.json();
+    console.log(error);
     throw new Error(error.error || 'Erro ao enviar ficha');
   }
 

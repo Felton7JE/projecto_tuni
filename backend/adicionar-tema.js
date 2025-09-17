@@ -7,7 +7,7 @@ async function adicionarCampoTema() {
             user: 'root',
             password: '',
             database: 'sistema_academico'
-        });
+        }); 
 
         // Adicionar campo tema
         await connection.execute(`
