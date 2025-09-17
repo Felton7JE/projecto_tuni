@@ -1,0 +1,344 @@
+.painel {
+    margin-left: 270px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
+
+.painel-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.painel-header {
+    background: linear-gradient(135deg, #4169e1, #5b7fd6);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+}
+
+.painel-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.painel-header p {
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+.form-ficha {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.form-ficha h3 {
+    color: #4169e1;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-ficha input,
+.form-ficha select,
+.form-ficha textarea {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-ficha input:focus,
+.form-ficha select:focus,
+.form-ficha textarea:focus {
+    outline: none;
+    border-color: #4169e1;
+    box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-ficha button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #4169e1, #5b7fd6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-ficha button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+}
+
+.form-ficha button:active {
+    transform: translateY(0);
+}
+
+/* Tabelas responsivas */
+.table-container {
+    margin-top: 30px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table th {
+    background: linear-gradient(135deg, #4169e1, #5b7fd6);
+    color: white;
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e1e5e9;
+    vertical-align: middle;
+}
+
+table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .painel {
+        margin-left: 250px;
+        padding: 20px;
+    }
+    
+    .painel-header h1 {
+        font-size: 24px;
+    }
+    
+    .form-ficha {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .painel {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .painel-header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .painel-header h1 {
+        font-size: 22px;
+    }
+    
+    .form-ficha {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .form-ficha input,
+    .form-ficha select,
+    .form-ficha textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* Previne zoom no iOS */
+    }
+    
+    .table-container {
+        margin-top: 20px;
+    }
+    
+    table {
+        font-size: 13px;
+    }
+    
+    table th,
+    table td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .painel {
+        padding: 10px;
+    }
+    
+    .painel-header {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .painel-header h1 {
+        font-size: 20px;
+    }
+    
+    .form-ficha {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .form-ficha h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .form-ficha input,
+    .form-ficha select,
+    .form-ficha textarea {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .form-ficha button {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    table th,
+    table td {
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .painel {
+        padding: 8px;
+    }
+    
+    .painel-header {
+        padding: 10px;
+    }
+    
+    .painel-header h1 {
+        font-size: 18px;
+    }
+    
+    .form-ficha {
+        padding: 12px;
+    }
+    
+    .form-ficha h3 {
+        font-size: 16px;
+    }
+    
+    table {
+        font-size: 11px;
+    }
+    
+    table th,
+    table td {
+        padding: 6px 4px;
+    }
+}
+
+/* Otimizações para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+    .form-ficha input,
+    .form-ficha select,
+    .form-ficha textarea {
+        min-height: 44px;
+        font-size: 16px; /* Previne zoom automático */
+    }
+    
+    .form-ficha button {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    table th,
+    table td {
+        min-height: 44px;
+        padding: 12px 8px;
+    }
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+    .painel {
+        background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    }
+    
+    .form-ficha {
+        background: #333333;
+        color: white;
+    }
+    
+    .form-ficha input,
+    .form-ficha select,
+    .form-ficha textarea {
+        background: #444444;
+        color: white;
+        border-color: #555555;
+    }
+    
+    .table-container {
+        background: #333333;
+    }
+    
+    table td {
+        border-bottom-color: #555555;
+    }
+    
+    table tr:hover {
+        background-color: #444444;
+    }
+}
+
+/* Animações para entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.painel-content > * {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.painel-content > *:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.painel-content > *:nth-child(3) {
+    animation-delay: 0.2s;
+}
+  

@@ -1,0 +1,278 @@
+/* src/Sidebar.css */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar h2.logo {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid #4169e1;
+  padding-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 8px 0;
+}
+
+.sidebar ul li .nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar ul li .nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(135deg, #4169e1, #5b7fd6);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.sidebar ul li .nav-link:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.sidebar ul li .nav-link:hover::before {
+  width: 100%;
+}
+
+.sidebar ul li .nav-link.active {
+  background: linear-gradient(135deg, #4169e1, #5b7fd6);
+  color: white;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+.nav-text {
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-text {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar.collapsed h2.logo {
+  font-size: 16px;
+}
+
+/* Menu toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -15px;
+  background: #4169e1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: #5b7fd6;
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 15px;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 22px;
+  }
+  
+  .sidebar ul li .nav-link {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 20px;
+    transition: left 0.3s ease;
+    max-height: 100vh;
+  }
+  
+  .sidebar.open {
+    left: 0;
+    width: 280px;
+  }
+  
+  .sidebar.collapsed {
+    width: 280px;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li .nav-link {
+    font-size: 16px;
+    padding: 15px 16px;
+  }
+  
+  .sidebar-toggle {
+    display: block;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 15px;
+  }
+  
+  .sidebar.open {
+    width: 100%;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar ul li .nav-link {
+    font-size: 15px;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  
+  .nav-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .sidebar {
+    padding: 10px;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li .nav-link {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+/* Animações melhoradas */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar.open {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Melhor contraste para acessibilidade */
+@media (prefers-contrast: high) {
+  .sidebar {
+    background: #1a1a1a;
+    border-right: 2px solid #ffffff;
+  }
+  
+  .sidebar ul li .nav-link {
+    border: 1px solid transparent;
+  }
+  
+  .sidebar ul li .nav-link:hover,
+  .sidebar ul li .nav-link:focus {
+    border-color: #ffffff;
+    background: #333333;
+  }
+}
+
+/* Suporte para modo escuro */
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  }
+}
+
+/* Otimizações para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  .sidebar ul li .nav-link {
+    padding: 16px;
+    min-height: 48px;
+  }
+  
+  .sidebar-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
