@@ -2,8 +2,9 @@
 
 echo "🚀 Configuraçãoecho "1. Configure o arquivo backend/.env com suas configurações MySQL"
 echo "2. Certifique-se que o MySQL está rodando"
-echo "3. Execute: cd backend && node setup-completo.js"
-echo "4. Para iniciar o projeto:"ática do Projeto - Sistema Acadêmico"
+echo "3. Execute: cd backend && npm install"
+echo "4. Execute: node criar-sistema-completo.js"
+echo "5. Para iniciar o projeto:"ática do Projeto - Sistema Acadêmico"
 echo "========================================================"
 
 # Verificar se Node.js está instalado

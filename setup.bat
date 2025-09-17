@@ -36,8 +36,9 @@ echo.
 echo 🎯 Próximos passos:
 echo 1. Configure o arquivo backend\.env com suas credenciais MySQL
 echo 2. Certifique-se que o MySQL está rodando
-echo 3. Execute: cd backend ^&^& node setup-completo.js
-echo 4. Para iniciar o projeto:
+echo 3. Execute: cd backend ^&^& npm install
+echo 4. Execute: node criar-sistema-completo.js
+echo 5. Para iniciar o projeto:
 echo    - Terminal 1: cd backend ^&^& node server.js
 echo    - Terminal 2: npm run dev
 echo.

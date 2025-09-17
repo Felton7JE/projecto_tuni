@@ -27,23 +27,30 @@ cd ..
 
 ### 3. Configurar Banco de Dados MySQL
 
-#### Criar o banco de dados:
-```sql
-CREATE DATABASE sistema_academico;
-USE sistema_academico;
-```
-
-#### Executar scripts de configuração:
+#### Instalar dependências do backend:
 ```bash
 cd backend
-node setup-completo.js
+npm install
+cd ..
 ```
 
+#### Criar o sistema completo do zero:
+```bash
+cd backend
+node criar-sistema-completo.js
+```
+
+**⚠️ ATENÇÃO: Este script remove qualquer database existente e cria tudo do zero!**
+
 **Este script único faz tudo:**
-- ✅ Cria todas as tabelas necessárias
-- ✅ Insere dados de exemplo
-- ✅ Configura sistema colaborativo
-- ✅ Prepara estrutura para IA
+- 🗑️ Remove database antigo (se existir)
+- 🆕 Cria database "sistema_academico" 
+- 📋 Cria todas as 7 tabelas necessárias
+- 👥 Insere usuários de exemplo (1 docente + 3 alunos)
+- 📚 Cria disciplinas e fichas de exemplo
+- 💬 Adiciona dúvidas de demonstração
+- 🤝 Configura sistema colaborativo
+- 🤖 Prepara estrutura para IA
 
 ### 4. Configurar Variáveis de Ambiente
 
